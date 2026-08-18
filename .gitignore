@@ -2,3 +2,12 @@ __pycache__/
 *.pyc
 .vscode/
 .idea/
+
+# Local Home Assistant test instances / secrets - never commit real credentials
+secrets.yaml
+*.local.yaml
+.env
+.env.*
+config/
+test_config/
+
