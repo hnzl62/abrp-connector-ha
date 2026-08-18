@@ -1,0 +1,125 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ABRP credentials",
+        "description": "Enter your Iternio (ABRP) telemetry API key and your personal user token.",
+        "data": {
+          "api_key": "API key",
+          "user_token": "User token"
+        }
+      },
+      "vehicle": {
+        "title": "Select vehicle",
+        "description": "Choose the MySkoda vehicle to send telemetry for.",
+        "data": {
+          "vehicle_device_id": "Vehicle"
+        }
+      },
+      "car_model_manufacturer": {
+        "title": "Vehicle manufacturer",
+        "description": "Used to look up the ABRP car model identifier.",
+        "data": {
+          "manufacturer": "Manufacturer"
+        }
+      },
+      "car_model": {
+        "title": "Vehicle model",
+        "description": "Select the closest matching model for {manufacturer}.",
+        "data": {
+          "model": "Model"
+        }
+      },
+      "car_model_manual": {
+        "title": "Vehicle model (manual entry)",
+        "description": "The ABRP model list could not be loaded. Enter the ABRP car_model identifier manually, or leave it blank to let ABRP use the vehicle profile's default model.",
+        "data": {
+          "car_model": "ABRP car model identifier"
+        }
+      },
+      "entities": {
+        "title": "Entity mapping",
+        "description": "Pre-filled from your MySkoda vehicle where possible. Leave a field empty to skip that value entirely.",
+        "data": {
+          "entity_soc": "State of charge (required)",
+          "entity_timestamp": "Vehicle data timestamp",
+          "entity_charging_state": "Charging state",
+          "entity_charging_power": "Charging power",
+          "entity_charge_type": "Charge type (AC/DC)",
+          "entity_in_motion": "Vehicle in motion",
+          "entity_odometer": "Odometer",
+          "entity_range": "Estimated range",
+          "entity_ext_temp": "Outside temperature"
+        }
+      },
+      "interval": {
+        "title": "Send interval",
+        "description": "How often to send a telemetry heartbeat, in seconds. An update is also sent immediately whenever the charge state changes.",
+        "data": {
+          "interval": "Interval (seconds)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-enter ABRP credentials",
+        "description": "ABRP rejected the configured API key or user token. Enter valid credentials to resume telemetry.",
+        "data": {
+          "api_key": "API key",
+          "user_token": "User token"
+        }
+      }
+    },
+    "error": {
+      "required": "This field is required.",
+      "invalid_auth": "ABRP rejected the API key or user token.",
+      "cannot_connect": "Could not reach the ABRP API. Please try again."
+    },
+    "abort": {
+      "no_myskoda_devices": "No MySkoda vehicle was found. Set up the MySkoda integration first.",
+      "already_configured": "This vehicle is already configured.",
+      "reauth_successful": "Credentials updated successfully."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "MySkoda → ABRP options",
+        "description": "Change credentials, the ABRP car model, entity mapping, send interval and fine-tuning.",
+        "data": {
+          "api_key": "API key",
+          "user_token": "User token",
+          "car_model": "ABRP car model identifier",
+          "interval": "Interval (seconds)",
+          "timestamp_source": "Timestamp source",
+          "only_on_change": "Only send heartbeat when the payload changed",
+          "entity_soc": "State of charge (required)",
+          "entity_timestamp": "Vehicle data timestamp",
+          "entity_charging_state": "Charging state",
+          "entity_charging_power": "Charging power",
+          "entity_charge_type": "Charge type (AC/DC)",
+          "entity_in_motion": "Vehicle in motion",
+          "entity_odometer": "Odometer",
+          "entity_range": "Estimated range",
+          "entity_ext_temp": "Outside temperature"
+        }
+      }
+    },
+    "error": {
+      "required": "This field is required."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "last_successful_send": {
+        "name": "Last successful send"
+      },
+      "last_error": {
+        "name": "Last error"
+      }
+    },
+    "switch": {
+      "telemetry_enabled": {
+        "name": "Telemetry enabled"
+      }
+    }
+  }
+}

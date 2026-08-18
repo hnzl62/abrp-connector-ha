@@ -1,0 +1,125 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ABRP-Zugangsdaten",
+        "description": "API-Key und persönliches User-Token für die Iternio-Telemetrie-API (ABRP) eingeben.",
+        "data": {
+          "api_key": "API-Key",
+          "user_token": "User-Token"
+        }
+      },
+      "vehicle": {
+        "title": "Fahrzeug auswählen",
+        "description": "MySkoda-Fahrzeug auswählen, für das Telemetriedaten gesendet werden sollen.",
+        "data": {
+          "vehicle_device_id": "Fahrzeug"
+        }
+      },
+      "car_model_manufacturer": {
+        "title": "Fahrzeughersteller",
+        "description": "Wird zur Ermittlung der ABRP-Modellkennung verwendet.",
+        "data": {
+          "manufacturer": "Hersteller"
+        }
+      },
+      "car_model": {
+        "title": "Fahrzeugmodell",
+        "description": "Passendstes Modell für {manufacturer} auswählen.",
+        "data": {
+          "model": "Modell"
+        }
+      },
+      "car_model_manual": {
+        "title": "Fahrzeugmodell (manuell)",
+        "description": "Die ABRP-Modellliste konnte nicht geladen werden. ABRP-car_model-Kennung manuell eingeben, oder leer lassen, damit ABRP das im Fahrzeugprofil hinterlegte Modell verwendet.",
+        "data": {
+          "car_model": "ABRP-Modellkennung"
+        }
+      },
+      "entities": {
+        "title": "Entity-Zuordnung",
+        "description": "Soweit möglich bereits anhand des MySkoda-Fahrzeugs vorbelegt. Ein Feld leer lassen, um diesen Wert komplett auszulassen.",
+        "data": {
+          "entity_soc": "Ladezustand (Pflichtfeld)",
+          "entity_timestamp": "Zeitstempel der Fahrzeugdaten",
+          "entity_charging_state": "Ladezustand (Status)",
+          "entity_charging_power": "Ladeleistung",
+          "entity_charge_type": "Lademodus (AC/DC)",
+          "entity_in_motion": "Fahrzeug in Bewegung",
+          "entity_odometer": "Kilometerstand",
+          "entity_range": "Geschätzte Reichweite",
+          "entity_ext_temp": "Außentemperatur"
+        }
+      },
+      "interval": {
+        "title": "Sendeintervall",
+        "description": "Wie oft ein Telemetrie-Heartbeat gesendet wird, in Sekunden. Zusätzlich wird bei Änderung des Ladestatus sofort gesendet.",
+        "data": {
+          "interval": "Intervall (Sekunden)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "ABRP-Zugangsdaten erneut eingeben",
+        "description": "ABRP hat den hinterlegten API-Key oder das User-Token abgelehnt. Gültige Zugangsdaten eingeben, um die Übertragung fortzusetzen.",
+        "data": {
+          "api_key": "API-Key",
+          "user_token": "User-Token"
+        }
+      }
+    },
+    "error": {
+      "required": "Dieses Feld ist erforderlich.",
+      "invalid_auth": "ABRP hat den API-Key oder das User-Token abgelehnt.",
+      "cannot_connect": "Die ABRP-API konnte nicht erreicht werden. Bitte erneut versuchen."
+    },
+    "abort": {
+      "no_myskoda_devices": "Kein MySkoda-Fahrzeug gefunden. Zuerst die MySkoda-Integration einrichten.",
+      "already_configured": "Dieses Fahrzeug ist bereits eingerichtet.",
+      "reauth_successful": "Zugangsdaten erfolgreich aktualisiert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "MySkoda → ABRP Optionen",
+        "description": "Zugangsdaten, ABRP-Fahrzeugmodell, Entity-Zuordnung, Sendeintervall und Feineinstellungen ändern.",
+        "data": {
+          "api_key": "API-Key",
+          "user_token": "User-Token",
+          "car_model": "ABRP-Modellkennung",
+          "interval": "Intervall (Sekunden)",
+          "timestamp_source": "Zeitstempel-Quelle",
+          "only_on_change": "Heartbeat nur bei Änderung senden",
+          "entity_soc": "Ladezustand (Pflichtfeld)",
+          "entity_timestamp": "Zeitstempel der Fahrzeugdaten",
+          "entity_charging_state": "Ladezustand (Status)",
+          "entity_charging_power": "Ladeleistung",
+          "entity_charge_type": "Lademodus (AC/DC)",
+          "entity_in_motion": "Fahrzeug in Bewegung",
+          "entity_odometer": "Kilometerstand",
+          "entity_range": "Geschätzte Reichweite",
+          "entity_ext_temp": "Außentemperatur"
+        }
+      }
+    },
+    "error": {
+      "required": "Dieses Feld ist erforderlich."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "last_successful_send": {
+        "name": "Letzte erfolgreiche Übertragung"
+      },
+      "last_error": {
+        "name": "Letzter Fehler"
+      }
+    },
+    "switch": {
+      "telemetry_enabled": {
+        "name": "Übertragung aktiv"
+      }
+    }
+  }
+}
