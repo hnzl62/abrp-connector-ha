@@ -1,13 +1,13 @@
 {
   "domain": "myskoda_abrp",
   "name": "MySkoda → ABRP Telemetry",
-  "version": "0.1.0",
-  "config_flow": true,
-  "documentation": "https://github.com/Mikeaat/myskoda-abrp",
-  "issue_tracker": "https://github.com/Mikeaat/myskoda-abrp/issues",
-  "codeowners": ["@Mikeaat"],
-  "iot_class": "cloud_push",
-  "integration_type": "service",
   "after_dependencies": ["myskoda"],
-  "requirements": []
+  "codeowners": ["@Mikeaat"],
+  "config_flow": true,
+  "documentation": "https://github.com/Mikeaat/abrp-connector-ha",
+  "integration_type": "service",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/Mikeaat/abrp-connector-ha/issues",
+  "requirements": [],
+  "version": "0.1.1"
 }
