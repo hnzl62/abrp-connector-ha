@@ -359,7 +359,14 @@ class MySkodaAbrpConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 errors["base"] = "cannot_connect"
             else:
                 new_data = {**entry.data, CONF_API_KEY: api_key, CONF_USER_TOKEN: user_token}
-                self.hass.config_entries.async_update_entry(entry, data=new_data)
+                new_options = {
+                    **entry.options,
+                    CONF_API_KEY: api_key,
+                    CONF_USER_TOKEN: user_token,
+                }
+                self.hass.config_entries.async_update_entry(
+                    entry, data=new_data, options=new_options
+                )
                 await self.hass.config_entries.async_reload(entry.entry_id)
                 return self.async_abort(reason="reauth_successful")
 
