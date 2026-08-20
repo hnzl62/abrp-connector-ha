@@ -35,7 +35,7 @@ The API key, user token, ABRP vehicle model, Home Assistant entity mapping, and 
 3. Add this repository URL and choose **Integration** as the category:
 
    ```text
-   https://github.com/Mikeaat/abrp-connector-ha
+   https://github.com/hnzl62/abrp-connector-ha
    ```
 
 4. Install **MySkoda → ABRP Telemetry**.
